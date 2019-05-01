@@ -1,55 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2c98dea3-ba1a-49aa-ad79-8f60a106213c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_16.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/files/audit.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/files/doctor.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/files/medicalcentre.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/files/pill.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libraries/mysql-connector-java-8.0.16.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/db.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/UIService.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/UIService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/UserForm.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/UserForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/medicaloffice/service/ConnectionDB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/medicaloffice/service/FileService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/medicaloffice/service/FileTextService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/medicaloffice/service/ServiceDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MedicalOffice.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MedicalOffice.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MedicalOffice/com/medicaloffice/Appointment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MedicalOffice/com/medicaloffice/Diagnosis.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MedicalOffice/com/medicaloffice/Doctor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MedicalOffice/com/medicaloffice/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MedicalOffice/com/medicaloffice/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MedicalOffice/com/medicaloffice/MedicalCentre.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MedicalOffice/com/medicaloffice/MedicalFile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MedicalOffice/com/medicaloffice/Patient.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MedicalOffice/com/medicaloffice/PatientAdult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MedicalOffice/com/medicaloffice/PatientChild.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MedicalOffice/com/medicaloffice/PatientElderly.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MedicalOffice/com/medicaloffice/Pill.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MedicalOffice/com/medicaloffice/Prescription.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MedicalOffice/com/medicaloffice/repository/AppointmentRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MedicalOffice/com/medicaloffice/repository/AppointmentRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MedicalOffice/com/medicaloffice/repository/CollectionRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MedicalOffice/com/medicaloffice/repository/CollectionRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MedicalOffice/com/medicaloffice/service/Service.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MedicalOffice/com/medicaloffice/service/Service.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/medicaloffice/Appointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/medicaloffice/models/Appointment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/medicaloffice/Diagnosis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/medicaloffice/models/Diagnosis.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/medicaloffice/Doctor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/medicaloffice/models/Doctor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/medicaloffice/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/medicaloffice/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/medicaloffice/MedicalCentre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/medicaloffice/models/MedicalCentre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/medicaloffice/MedicalFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/medicaloffice/models/MedicalFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/medicaloffice/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/medicaloffice/models/Patient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/medicaloffice/PatientAdult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/medicaloffice/models/PatientAdult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/medicaloffice/PatientChild.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/medicaloffice/models/PatientChild.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/medicaloffice/PatientElderly.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/medicaloffice/models/PatientElderly.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/medicaloffice/Pill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/medicaloffice/models/Pill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/medicaloffice/Prescription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/medicaloffice/models/Prescription.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/medicaloffice/repository/AppointmentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/medicaloffice/repository/AppointmentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/medicaloffice/repository/CollectionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/medicaloffice/repository/CollectionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/medicaloffice/service/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/medicaloffice/service/Service.java" afterDir="false" />
-    </list>
+    <list default="true" id="2c98dea3-ba1a-49aa-ad79-8f60a106213c" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +14,7 @@
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.closed" value="13" />
-          <entry key="project.open.time.0" value="5" />
+          <entry key="project.open.time.0" value="6" />
           <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.13" value="1" />
@@ -71,21 +23,21 @@
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="2" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="16" />
+          <entry key="project.opened" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="csv" value="12" />
           <entry key="form" value="13" />
-          <entry key="java" value="156" />
+          <entry key="java" value="157" />
           <entry key="sql" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="GUI_DESIGNER_FORM" value="13" />
-          <entry key="JAVA" value="156" />
+          <entry key="JAVA" value="157" />
           <entry key="PLAIN_TEXT" value="12" />
           <entry key="SQL" value="2" />
         </counts>
@@ -95,12 +47,13 @@
           <entry key="csv" value="109" />
           <entry key="java" value="9262" />
           <entry key="sql" value="17" />
+          <entry key="txt" value="20" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="9262" />
-          <entry key="PLAIN_TEXT" value="109" />
+          <entry key="PLAIN_TEXT" value="129" />
           <entry key="SQL" value="17" />
         </counts>
       </usages-collector>
@@ -116,16 +69,23 @@
           <provider selected="true" editor-type-id="ui-designer" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI/UIService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="26" lean-forward="true" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+            <state relative-caret-position="97">
+              <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2090#2091#0" expanded="true" />
-                <element signature="e#2153#2154#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/medicaloffice/service/FileTextService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="124">
+              <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -171,6 +131,7 @@
     </replaceStrings>
   </component>
   <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -231,6 +192,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -253,35 +216,12 @@
               <item name="MedicalOffice" type="b2602c69:ProjectViewProjectNode" />
               <item name="MedicalOffice" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="medicaloffice" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MedicalOffice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MedicalOffice" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="GUI" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MedicalOffice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MedicalOffice" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="UIService" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="MedicalOffice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MedicalOffice" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="UserForm" type="e9f4de52:FormNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -386,13 +326,20 @@
       <option name="presentableId" value="Default" />
       <updated>1553495964151</updated>
     </task>
+    <task id="LOCAL-00001" summary="added bd connection">
+      <created>1556740146571</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1556740146571</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="467" y="37" width="817" height="637" extended-state="0" />
-    <editor active="true" />
+    <frame x="466" y="36" width="818" height="638" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49773756" visible="true" weight="0.31968296" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49773756" visible="true" weight="0.32849604" />
       <window_info id="Structure" order="1" sideWeight="0.5022625" side_tool="true" weight="0.16194332" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -407,7 +354,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="8" side_tool="true" visible="true" weight="0.32871288" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32738096" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -425,6 +372,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added bd connection" />
+    <option name="LAST_COMMIT_MESSAGE" value="added bd connection" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -490,13 +441,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="782">
           <caret line="81" column="30" selection-start-line="81" selection-start-column="30" selection-end-line="81" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/medicaloffice/service/FileTextService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -656,16 +600,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/UiServiceForm.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/UiServiceForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-595">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/UiServiceForm.form" />
+    <entry file="file://$PROJECT_DIR$/src/GUI/UiServiceForm.java" />
     <entry file="file://$PROJECT_DIR$/src/com/medicaloffice/service/Service.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-136">
@@ -686,6 +622,9 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/UIService.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/UserForm.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -696,18 +635,20 @@
     <entry file="file://$PROJECT_DIR$/src/GUI/UserForm.form">
       <provider selected="true" editor-type-id="ui-designer" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/UIService.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/UIService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="26" lean-forward="true" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+        <state relative-caret-position="97">
+          <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2090#2091#0" expanded="true" />
-            <element signature="e#2153#2154#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/medicaloffice/service/FileTextService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
         </state>
       </provider>
     </entry>

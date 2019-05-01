@@ -1,7 +1,7 @@
 package com.medicaloffice.repository;
 
 
-import com.medicaloffice.Appointment;
+import com.medicaloffice.models.Appointment;
 
 public interface AppointmentRepository extends Repository<Appointment> {
 }

@@ -1,14 +1,12 @@
 package com.medicaloffice.service;
 
-import com.medicaloffice.*;
+import com.medicaloffice.models.*;
 import com.medicaloffice.utils.DiagnosisType;
-import sun.security.krb5.internal.PAData;
 
-import javax.sound.midi.Soundbank;
-import java.sql.SQLOutput;
+import java.io.File;
+import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class Service {
 
@@ -37,6 +35,14 @@ public class Service {
 
     private static Map<Long, Appointment> appointmentMap = new HashMap<>();
     private static List<Appointment> appointmentList = new ArrayList<>();
+
+
+    // FROM FILE
+    private static List<Doctor> doctorsFromCSV = new ArrayList<>();
+    private static List<MedicalCentre> medicalCentresFromCSV = new ArrayList<>();
+    private static List<Pill> pillsFromCSV = new ArrayList<>();
+
+    //
 
 
     private static final Service instance = new Service();
@@ -101,6 +107,14 @@ public class Service {
         appointmentList.add(new Appointment(1L, LocalDate.parse("2019-09-09"),"12:00", doctors.get(0), patientList.get(0), medicalCentre));
         appointmentList.add(new Appointment(2L, LocalDate.parse("2019-10-09"),"15:00", doctors.get(1), patientList.get(2), medicalCentre));
         appointmentList.add(new Appointment(2L, LocalDate.parse("2019-10-09"),"15:00", doctors.get(1), patientList.get(2), medicalCentre));
+
+    /////////////////// FROM CSV
+
+        pillsFromCSV = FileService.getInstance().readPillsFromCSV("files/pill.csv");
+        doctorsFromCSV = FileService.getInstance().readDoctorsFromCSV("files/doctor.csv");
+        medicalCentresFromCSV = FileService.getInstance().readMedicalCentresFromCSV("files/medicalcentre.csv");
+
+
     }
 
     public void  patientsWithHeartRisk() {
@@ -110,6 +124,11 @@ public class Service {
                 System.out.println(patient);
             }
         }
+
+        StringBuilder stringBuilder = new StringBuilder("");
+        stringBuilder.append(new Object(){}.getClass().getEnclosingMethod().getName()).append(",").append(new Timestamp(System.currentTimeMillis()));
+        FileTextService.getInstance().writeTextToFile(stringBuilder.toString(),
+                "files/audit.csv");
     }
 
     public void childPatients(){
@@ -119,15 +138,29 @@ public class Service {
                 System.out.println(patient);
             }
         }
+
+        StringBuilder stringBuilder = new StringBuilder("");
+        stringBuilder.append(new Object(){}.getClass().getEnclosingMethod().getName()).append(",").append(new Timestamp(System.currentTimeMillis()));
+        FileTextService.getInstance().writeTextToFile(stringBuilder.toString(),
+                "files/audit.csv");
     }
 
     public float getAppointment1Cost(){
-        Appointment app = appointmentMap.get(0);
-        if( appointmentMap.get(0).getDoctor().getSpecialisation().equals("Medic de Familie")){
+
+        StringBuilder stringBuilder = new StringBuilder("");
+        stringBuilder.append(new Object(){}.getClass().getEnclosingMethod().getName()).append(",").append(new Timestamp(System.currentTimeMillis()));
+        FileTextService.getInstance().writeTextToFile(stringBuilder.toString(),
+                "files/audit.csv");
+
+
+        //Appointment app = appointmentMap.get(0);
+        if( appointmentMap.get(1L).getDoctor().getSpecialisation().equals("Medic de Familie")){
             return 200;
         }
         else
             return 300;
+
+
     }
 
     public void patientWithLongestDiagnosisList(){
@@ -148,6 +181,10 @@ public class Service {
             }
         }
 
+        StringBuilder stringBuilder = new StringBuilder("");
+        stringBuilder.append(new Object(){}.getClass().getEnclosingMethod().getName()).append(",").append(new Timestamp(System.currentTimeMillis()));
+        FileTextService.getInstance().writeTextToFile(stringBuilder.toString(),
+                "files/audit.csv");
     }
 
     public void orderPatients() {
@@ -155,6 +192,11 @@ public class Service {
         Collections.sort(patientList);
         for (Patient patient:patientList)
             System.out.println(patient);
+
+        StringBuilder stringBuilder = new StringBuilder("");
+        stringBuilder.append(new Object(){}.getClass().getEnclosingMethod().getName()).append(",").append(new Timestamp(System.currentTimeMillis()));
+        FileTextService.getInstance().writeTextToFile(stringBuilder.toString(),
+                "files/audit.csv");
     }
 
     public void getTheMostSpecialisedDoctor(){
@@ -162,24 +204,42 @@ public class Service {
         Collections.sort(doctors);
         System.out.println(doctors.get(1));
 
+        StringBuilder stringBuilder = new StringBuilder("");
+        stringBuilder.append(new Object(){}.getClass().getEnclosingMethod().getName()).append(",").append(new Timestamp(System.currentTimeMillis()));
+        FileTextService.getInstance().writeTextToFile(stringBuilder.toString(),
+                "files/audit.csv");
+
     }
 
-    public void getAllAppointmentsFrom2019(){
+    public void getAllAppointmentsFrom2019(LocalDate mydate){
+   // public void getAllAppointmentsFrom2019(){
         System.out.println("--------------Appointments from 2019");
         long i = 0;
         for (Long key : appointmentMap.keySet()) {
-            if (appointmentMap.get(key).getDate().getYear() == 2019){
+           // if (appointmentMap.get(key).getDate().getYear() == 2019){
+            if ( mydate == appointmentMap.get(key).getDate()){
                 System.out.println(appointmentMap.get(key));
             }
         }
+
+        StringBuilder stringBuilder = new StringBuilder("");
+        stringBuilder.append(new Object(){}.getClass().getEnclosingMethod().getName()).append(",").append(new Timestamp(System.currentTimeMillis()));
+        FileTextService.getInstance().writeTextToFile(stringBuilder.toString(),
+                "files/audit.csv");
     }
 
     public boolean patientWithCancer(){
+        StringBuilder stringBuilder = new StringBuilder("");
+        stringBuilder.append(new Object(){}.getClass().getEnclosingMethod().getName()).append(",").append(new Timestamp(System.currentTimeMillis()));
+        FileTextService.getInstance().writeTextToFile(stringBuilder.toString(),
+                "files/audit.csv");
+
         for(Patient patient : patientList)
             for(Diagnosis diagnosis : patient.getMedicalFile().getDiagnosisList())
                 if (diagnosis.getDisease() == "Cancer")
                 return true;
         return false;
+
     }
 
     public void prescriptionsContainingParacetamol(){
@@ -188,8 +248,22 @@ public class Service {
             for(Pill pill : prescription.getPills())
                 if(pill.getName() == "Paracetamol")
                     System.out.println(prescription);
+
+
+        StringBuilder stringBuilder = new StringBuilder("");
+        stringBuilder.append(new Object(){}.getClass().getEnclosingMethod().getName()).append(",").append(new Timestamp(System.currentTimeMillis()));
+        FileTextService.getInstance().writeTextToFile(stringBuilder.toString(),
+                "files/audit.csv");
     }
     public int nrOfAppointmentsMadeByAGivenPatient(String firstName, String lastName){
+
+        StringBuilder stringBuilder = new StringBuilder("");
+        stringBuilder.append(new Object(){}.getClass().getEnclosingMethod().getName()).append(",").append(new Timestamp(System.currentTimeMillis()));
+        FileTextService.getInstance().writeTextToFile(stringBuilder.toString(),
+                "files/audit.csv");
+
+
+
         int index = -1;
         int nr = 0;
         for (Patient patient : patientList)
@@ -202,6 +276,18 @@ public class Service {
              return nr;
         }
         return 0;
+
     }
+
+    public void getPillsFromCSV(){
+        System.out.println(pillsFromCSV);
+    }
+    public void getDoctorsFromCSV(){
+        System.out.println(doctorsFromCSV);
+    }
+    public void getMedicalCentresFromCSV() {
+        System.out.println(medicalCentresFromCSV);
+    }
+
 
 }

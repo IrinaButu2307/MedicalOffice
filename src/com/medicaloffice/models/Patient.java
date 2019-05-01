@@ -1,4 +1,4 @@
-package com.medicaloffice;
+package com.medicaloffice.models;
 
 public abstract class Patient implements Comparable<Patient>{
 
@@ -26,6 +26,17 @@ public abstract class Patient implements Comparable<Patient>{
         this.email = email;
         this.age = age;
         this.medicalFile = medicalFile;
+        this.arterialTension = arterialTension;
+    }
+
+    public Patient(Long id, String CNP, String firstName, String lastName, String telephoneNumber, String email, int age, int arterialTension) {
+        this.id = id;
+        this.CNP = CNP;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.telephoneNumber = telephoneNumber;
+        this.email = email;
+        this.age = age;
         this.arterialTension = arterialTension;
     }
 

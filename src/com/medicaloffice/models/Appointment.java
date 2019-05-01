@@ -1,8 +1,6 @@
-package com.medicaloffice;
+package com.medicaloffice.models;
 
-import javax.print.Doc;
 import java.time.LocalDate;
-import java.util.Date;
 
 public class Appointment {
     Long id;

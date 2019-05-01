@@ -1,4 +1,4 @@
-package com.medicaloffice;
+package com.medicaloffice.models;
 
 public class PatientAdult extends Patient {
     private boolean smoker;

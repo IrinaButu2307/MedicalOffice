@@ -1,4 +1,4 @@
-package com.medicaloffice;
+package com.medicaloffice.models;
 
 public class PatientChild extends Patient{
 

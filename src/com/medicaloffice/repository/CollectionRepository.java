@@ -1,9 +1,8 @@
 package com.medicaloffice.repository;
 
 
-import com.medicaloffice.Appointment;
+import com.medicaloffice.models.Appointment;
 
-import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 

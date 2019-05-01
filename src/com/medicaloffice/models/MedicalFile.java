@@ -1,4 +1,6 @@
-package com.medicaloffice;
+package com.medicaloffice.models;
+
+import com.medicaloffice.models.Diagnosis;
 
 import java.util.List;
 

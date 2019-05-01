@@ -1,6 +1,4 @@
-package com.medicaloffice;
-
-import javax.print.Doc;
+package com.medicaloffice.models;
 
 public class Doctor implements Comparable<Doctor>{
 

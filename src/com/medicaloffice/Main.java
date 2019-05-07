@@ -28,10 +28,12 @@ public class Main {
 //        Service.getInstance().getMedicalCentresFromCSV();
 
         // III
-        // ServiceDB.getInstance().insertPillDB();
-        //  ServiceDB.getInstance().readPillsBD();
-          //ServiceDB.getInstance().updatePillsBD_byId();
-          ServiceDB.getInstance().deletePillsBD_byName();
+//          ServiceDB.getInstance().insertPillDB();
+//          ServiceDB.getInstance().selectPillsBD();
+//          ServiceDB.getInstance().updatePillsBD_byId();
+//          ServiceDB.getInstance().deletePillsBD_byName();
+
+       // Service.getInstance().prescriptionsContainingPill("Paracetamol");
     }
 
 }

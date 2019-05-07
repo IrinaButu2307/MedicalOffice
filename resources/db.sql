@@ -116,13 +116,65 @@ VALUES
 CREATE TABLE `patients` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `cnp` varchar(13) NOT NULL,
-  `first_name` varchar(45) NOT NULL,
-  `last_name` varchar(45) NOT NULL,
-  `telephone_number` varchar(45) NOT NULL,
-  `email` varchar(45) DEFAULT NULL,
+  `name` varchar(45) NOT NULL,
+  `telephone` varchar(45) NOT NULL,
   `age` int(11) NOT NULL,
-  `arterial_tension` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 )
 
+(
+
+INSERT INTO `medicaloffice`.`patients`
+(
+`cnp`,
+`name`,
+`telephone`,
+`age`
+)
+VALUES
+(
+'23242535',
+'Irina Butu',
+'0724250382',
+23);
+
+INSERT INTO `medicaloffice`.`patients`
+(
+`cnp`,
+`name`,
+`telephone`,
+`age`
+)
+VALUES
+(
+'23240035',
+'Cornelia Dinu',
+'0724250300',
+21);
+INSERT INTO `medicaloffice`.`patients`
+(
+`cnp`,
+`name`,
+`telephone`,
+`age`
+)
+VALUES
+(
+'23242535',
+'Ioana Paraschiv',
+'0724000382',
+21);
+INSERT INTO `medicaloffice`.`patients`
+(
+`cnp`,
+`name`,
+`telephone`,
+`age`
+)
+VALUES
+(
+'333242535',
+'Dan Ionescu',
+'0701250382',
+33);
 

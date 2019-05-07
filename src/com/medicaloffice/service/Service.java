@@ -2,6 +2,7 @@ package com.medicaloffice.service;
 
 import com.medicaloffice.models.*;
 import com.medicaloffice.utils.DiagnosisType;
+import sun.rmi.log.LogInputStream;
 
 import java.io.File;
 import java.sql.Timestamp;
@@ -114,14 +115,18 @@ public class Service {
         doctorsFromCSV = FileService.getInstance().readDoctorsFromCSV("files/doctor.csv");
         medicalCentresFromCSV = FileService.getInstance().readMedicalCentresFromCSV("files/medicalcentre.csv");
 
+//        prescriptionList.add(new Prescription(21L, pillList, LocalDate.parse("2019-01-02"), LocalDate.parse("2019-01-10")));
+//        prescriptionList.add(new Prescription(1001L, pillList2, LocalDate.parse("2019-01-02"), LocalDate.parse("2019-01-10")));
 
     }
 
-    public void  patientsWithHeartRisk() {
+    public List<Patient>  patientsWithHeartRisk() {
         System.out.println("-------------Patients with heart disease risk");
+        List<Patient> patients = new ArrayList<>();
         for (Patient patient : patientList) {
             if (patient.hasHeartDiseaseRisk()) {
                 System.out.println(patient);
+                patients.add(patient);
             }
         }
 
@@ -129,13 +134,16 @@ public class Service {
         stringBuilder.append(new Object(){}.getClass().getEnclosingMethod().getName()).append(",").append(new Timestamp(System.currentTimeMillis()));
         FileTextService.getInstance().writeTextToFile(stringBuilder.toString(),
                 "files/audit.csv");
+        return patients;
     }
 
-    public void childPatients(){
+    public List<Patient> childPatients(){
         System.out.println("-------------------Child patients");
+        List<Patient> childPatient = new ArrayList<>();
         for (Patient patient : patientList) {
             if (patient.getClass() == PatientChild.class) {
-                System.out.println(patient);
+                //System.out.println(patient);
+                childPatient.add(patient);
             }
         }
 
@@ -143,7 +151,9 @@ public class Service {
         stringBuilder.append(new Object(){}.getClass().getEnclosingMethod().getName()).append(",").append(new Timestamp(System.currentTimeMillis()));
         FileTextService.getInstance().writeTextToFile(stringBuilder.toString(),
                 "files/audit.csv");
+        return childPatient;
     }
+
 
     public float getAppointment1Cost(){
 
@@ -163,11 +173,12 @@ public class Service {
 
     }
 
-    public void patientWithLongestDiagnosisList(){
+    public List<Patient> patientWithLongestDiagnosisList(){
         System.out.println("------------Patient with longest Diagnosis List");
         int maximum = 0;
         int i=0, j=0;
         int index;
+        List<Patient> sikestpatients = new ArrayList<>();
         for(Patient patient: patientList){
             if(patient.getMedicalFile().getDiagnosisList().size() > maximum){
                 maximum = patient.getMedicalFile().getDiagnosisList().size();
@@ -176,15 +187,16 @@ public class Service {
 
         for(Patient patient: patientList){
             if(patient.getMedicalFile().getDiagnosisList().size() == maximum ){
-                maximum = patient.getMedicalFile().getDiagnosisList().size();
-                System.out.println(patient);
+                //System.out.println(patient);
+                sikestpatients.add(patient);
             }
         }
 
         StringBuilder stringBuilder = new StringBuilder("");
-        stringBuilder.append(new Object(){}.getClass().getEnclosingMethod().getName()).append(",").append(new Timestamp(System.currentTimeMillis()));
+        stringBuilder.append(new Object(){}.getClass().getEnclosingMethod().getName()).append(",").append(new Timestamp(System.currentTimeMillis())).append(Thread.currentThread().getName());
         FileTextService.getInstance().writeTextToFile(stringBuilder.toString(),
                 "files/audit.csv");
+        return sikestpatients;
     }
 
     public void orderPatients() {
@@ -194,20 +206,29 @@ public class Service {
             System.out.println(patient);
 
         StringBuilder stringBuilder = new StringBuilder("");
-        stringBuilder.append(new Object(){}.getClass().getEnclosingMethod().getName()).append(",").append(new Timestamp(System.currentTimeMillis()));
+        stringBuilder.append(new Object(){}.getClass().getEnclosingMethod().getName()).append(",").append(new Timestamp(System.currentTimeMillis())).append(Thread.currentThread().getName());
         FileTextService.getInstance().writeTextToFile(stringBuilder.toString(),
                 "files/audit.csv");
     }
 
-    public void getTheMostSpecialisedDoctor(){
+    public List<Doctor> getTheMostSpecialisedDoctor(){
         System.out.println("--------------The most experienced doctor");
         Collections.sort(doctors);
         System.out.println(doctors.get(1));
+        List<Doctor> expDoctors = new ArrayList<>();
+        expDoctors.add(doctors.get(1));
+//        int i =2;
+//        while (doctors.get(1).getYearsExperience() == doctors.get(i).getYearsExperience()){
+//            expDoctors.add(doctors.get(i));
+//        i++;
+//        }
 
         StringBuilder stringBuilder = new StringBuilder("");
-        stringBuilder.append(new Object(){}.getClass().getEnclosingMethod().getName()).append(",").append(new Timestamp(System.currentTimeMillis()));
+        stringBuilder.append(new Object(){}.getClass().getEnclosingMethod().getName()).append(",").append(new Timestamp(System.currentTimeMillis())).append(Thread.currentThread().getName());
         FileTextService.getInstance().writeTextToFile(stringBuilder.toString(),
                 "files/audit.csv");
+
+        return expDoctors;
 
     }
 
@@ -223,23 +244,60 @@ public class Service {
         }
 
         StringBuilder stringBuilder = new StringBuilder("");
-        stringBuilder.append(new Object(){}.getClass().getEnclosingMethod().getName()).append(",").append(new Timestamp(System.currentTimeMillis()));
+        stringBuilder.append(new Object(){}.getClass().getEnclosingMethod().getName()).append(",").append(new Timestamp(System.currentTimeMillis())).append(Thread.currentThread().getName());
         FileTextService.getInstance().writeTextToFile(stringBuilder.toString(),
                 "files/audit.csv");
     }
 
-    public boolean patientWithCancer(){
+    public List<Patient> patientWithCancer(){
         StringBuilder stringBuilder = new StringBuilder("");
-        stringBuilder.append(new Object(){}.getClass().getEnclosingMethod().getName()).append(",").append(new Timestamp(System.currentTimeMillis()));
+        stringBuilder.append(new Object(){}.getClass().getEnclosingMethod().getName()).append(",").append(new Timestamp(System.currentTimeMillis())).append(Thread.currentThread().getName());
         FileTextService.getInstance().writeTextToFile(stringBuilder.toString(),
                 "files/audit.csv");
+
+        List<Patient> cancerPatients = new ArrayList<>();
 
         for(Patient patient : patientList)
             for(Diagnosis diagnosis : patient.getMedicalFile().getDiagnosisList())
                 if (diagnosis.getDisease() == "Cancer")
-                return true;
-        return false;
+                    cancerPatients.add(patient);
+        return cancerPatients;
 
+    }
+
+    public String stringprescriptionsContainingPill(String pillName){
+        System.out.println("------------Toate retetele care contin Paracetamol");
+StringBuilder str = new StringBuilder();
+        for(Prescription prescription : prescriptionList)
+            for(Pill pill : prescription.getPills())
+                if(pill.getName() == pillName) {
+                    str.append(prescription.toString());
+                    str.append("\n");
+                }
+
+        StringBuilder stringBuilder = new StringBuilder("");
+        stringBuilder.append(new Object(){}.getClass().getEnclosingMethod().getName()).append(",").append(new Timestamp(System.currentTimeMillis())).append(Thread.currentThread().getName());
+        FileTextService.getInstance().writeTextToFile(stringBuilder.toString(),
+                "files/audit.csv");
+      return str.toString();
+    }
+    public List<Prescription> prescriptionsContainingPill(String pillName){
+        System.out.println("------------Toate retetele care contin Paracetamol");
+        List<Prescription> prescriptions = new ArrayList<>();
+
+        for(Prescription prescription : prescriptionList)
+            for(Pill pill : prescription.getPills())
+                if(pill.getName() == pillName) {
+                    System.out.println(prescription);
+                    prescriptions.add(prescription);
+                }
+
+        StringBuilder stringBuilder = new StringBuilder("");
+        stringBuilder.append(new Object(){}.getClass().getEnclosingMethod().getName()).append(",").append(new Timestamp(System.currentTimeMillis())).append(Thread.currentThread().getName());
+        FileTextService.getInstance().writeTextToFile(stringBuilder.toString(),
+                "files/audit.csv");
+
+        return prescriptions;
     }
 
     public void prescriptionsContainingParacetamol(){
@@ -251,14 +309,14 @@ public class Service {
 
 
         StringBuilder stringBuilder = new StringBuilder("");
-        stringBuilder.append(new Object(){}.getClass().getEnclosingMethod().getName()).append(",").append(new Timestamp(System.currentTimeMillis()));
+        stringBuilder.append(new Object(){}.getClass().getEnclosingMethod().getName()).append(",").append(new Timestamp(System.currentTimeMillis())).append(Thread.currentThread().getName());
         FileTextService.getInstance().writeTextToFile(stringBuilder.toString(),
                 "files/audit.csv");
     }
     public int nrOfAppointmentsMadeByAGivenPatient(String firstName, String lastName){
 
         StringBuilder stringBuilder = new StringBuilder("");
-        stringBuilder.append(new Object(){}.getClass().getEnclosingMethod().getName()).append(",").append(new Timestamp(System.currentTimeMillis()));
+        stringBuilder.append(new Object(){}.getClass().getEnclosingMethod().getName()).append(",").append(new Timestamp(System.currentTimeMillis())).append(Thread.currentThread().getName());
         FileTextService.getInstance().writeTextToFile(stringBuilder.toString(),
                 "files/audit.csv");
 
